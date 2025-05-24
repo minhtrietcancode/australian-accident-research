@@ -54,7 +54,7 @@ def task7_2():
 
     plt.title('Mean Severity by Road Geometry and Road Surface\n(Darker = More Severe)', fontsize=16)
     plt.tight_layout()
-    plt.savefig('task7_geometry_surface_heatmap.png')
+    plt.savefig('Task 7 GEOMETRY + SURFACE vs SEVERITY/task7_geometry_surface_heatmap.png')
     plt.close()
 
     # 2. Identify top 10 combinations with lowest mean SEVERITY and appropriate variance
@@ -67,7 +67,7 @@ def task7_2():
     ) # Exclude combinations with severity 0 (those without any records)
 
     # Save to CSV
-    top10_severe.to_csv('task7_geometry_surface_top10_severe.csv', index=False)
+    top10_severe.to_csv('Task 7 GEOMETRY + SURFACE vs SEVERITY/task7_geometry_surface_top10_severe.csv', index=False)
 
     # Create bar chart visualization
     plt.figure(figsize=(14, 8))
@@ -106,7 +106,7 @@ def task7_2():
     plt.ylim(0, max(top10_severe['SEVERITY_MEAN']) * 1.5)  # Adjust y-axis to accommodate error bars
     plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('task7_geometry_surface_top10_severe.png')
+    plt.savefig('Task 7 GEOMETRY + SURFACE vs SEVERITY/task7_geometry_surface_top10_severe.png')
     plt.close()
 
     # 3. Identify top 10 combinations with highest percentage of serious/fatal accidents
@@ -116,7 +116,7 @@ def task7_2():
     top10_serious_prob = top10_serious_prob.head(10)
 
     # Save to CSV
-    top10_serious_prob.to_csv('task7_geometry_surface_top10_serious_prob.csv', index=False)
+    top10_serious_prob.to_csv('Task 7 GEOMETRY + SURFACE vs SEVERITY/task7_geometry_surface_top10_serious_prob.csv', index=False)
 
     # Create bar chart visualization
     plt.figure(figsize=(14, 8))
@@ -153,7 +153,7 @@ def task7_2():
     plt.ylim(0, max(top10_serious_prob['SERIOUS_FATAL_PERCENT']) * 1.2)  # Add some space for labels
     plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('task7_geometry_surface_top10_serious_prob.png')
+    plt.savefig('Task 7 GEOMETRY + SURFACE vs SEVERITY/task7_geometry_surface_top10_serious_prob.png')
     plt.close()
 
     print("Task 7.2 completed: Analysis and visualizations have been saved.")

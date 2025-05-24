@@ -27,8 +27,8 @@ def task7_1():
         DataFrame with metrics for all road geometry and road surface combinations.
     """
     # Load the data
-    accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
-    vehicle = pd.read_csv('../Data Preprocess/updated_vehicle.csv')
+    accident = pd.read_csv('Data Preprocess/updated_accident.csv')
+    vehicle = pd.read_csv('Data Preprocess/updated_vehicle.csv')
 
     # Merge the two datasets on ACCIDENT_NO
     merged_df = pd.merge(accident, vehicle, on='ACCIDENT_NO', how='inner')
