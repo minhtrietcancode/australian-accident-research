@@ -1,0 +1,11 @@
+CATEGORIZED_LIGHT_CONDITION,ROAD_GEOMETRY_DESC,CATEGORIZED_ROAD_SURFACE,LIGHT_GEOMETRY_SURFACE,SEVERITY_MEAN,SEVERITY_VARIANCE,ACCIDENT_COUNT,SERIOUS_FATAL_PERCENT
+Unknown,Dead end,Paved,Unknown_Dead end_Paved,2.3333333333333335,0.42424242424242425,12.0,58.333333333333336
+Dark without Lighting,Dead end,Paved,Dark without Lighting_Dead end_Paved,2.4,0.2666666666666666,10.0,60.0
+Dark without Lighting,Not at intersection,Unpaved,Dark without Lighting_Not at intersection_Unpaved,2.4,0.35038759689922505,130.0,54.61538461538461
+Dark without Lighting,Not at intersection,Paved,Dark without Lighting_Not at intersection_Paved,2.4225570116603032,0.36188122159453495,9691.0,51.852234031575684
+Dark without Lighting,T intersection,Gravel,Dark without Lighting_T intersection_Gravel,2.4285714285714284,0.3818681318681317,105.0,50.476190476190474
+Dark without Lighting,Cross intersection,Gravel,Dark without Lighting_Cross intersection_Gravel,2.4375,0.2938829787234043,48.0,54.166666666666664
+Dark without Lighting,Not at intersection,Gravel,Dark without Lighting_Not at intersection_Gravel,2.4400948991696323,0.322713530175851,843.0,52.194543297746144
+Dark without Lighting,Multiple intersection,Paved,Dark without Lighting_Multiple intersection_Paved,2.46,0.29131313131313125,100.0,52.0
+Daylight,Dead end,Gravel,Daylight_Dead end_Gravel,2.473684210526316,0.26315789473684204,19.0,52.63157894736842
+Dark without Lighting,Unknown,Paved,Dark without Lighting_Unknown_Paved,2.5,0.5,10.0,40.0
