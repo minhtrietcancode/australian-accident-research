@@ -1,0 +1,95 @@
+===== Decision Tree Classification Results (Version 2) =====
+Dataset size: 325888
+Test set size (total across all folds): 325888
+
+Broader Categorization Applied:
+1. BROADER_CATEGORIZED_LIGHT_CONDITION:
+   - Poor Lighting: "Dark without Lighting"
+   - Adequate Lighting: "Dark with Lighting", "Daylight", "Limited Light"
+   - Unknown Lighting: "Unknown"
+
+2. BROADER_CATEGORIZED_ROAD_GEOMETRY:
+   - High Risk Geometry: "Not at intersection", "Dead end"
+   - Moderate Risk Geometry: "Multiple intersection", "T intersection", "Y intersection", "Cross intersection", "Road closure"
+   - Low Risk Geometry: "Private property"
+
+3. BROADER_CATEGORIZED_ROAD_SURFACE:
+   - Known Road Surface: "Paved", "Gravel", "Unpaved"
+   - Unknown Road Surface: "Unknown"
+
+Cross-validation Accuracy Scores:
+Fold 1: 0.6412
+Fold 2: 0.6413
+Fold 3: 0.6408
+Fold 4: 0.6414
+Fold 5: 0.6420
+
+Mean accuracy: 0.6414 (±0.0004)
+Overall accuracy on test folds: 0.6414
+
+Individual Fold Results:
+
+Fold 1:
+  Accuracy: 0.6412
+  Confusion Matrix:
+  [[40697  1022]
+ [22363  1096]]
+
+Fold 2:
+  Accuracy: 0.6413
+  Confusion Matrix:
+  [[40689  1030]
+ [22348  1111]]
+
+Fold 3:
+  Accuracy: 0.6408
+  Confusion Matrix:
+  [[40658  1061]
+ [22348  1111]]
+
+Fold 4:
+  Accuracy: 0.6414
+  Confusion Matrix:
+  [[40697  1021]
+ [22353  1106]]
+
+Fold 5:
+  Accuracy: 0.6420
+  Confusion Matrix:
+  [[40719   999]
+ [22334  1125]]
+
+Average Confusion Matrix:
+[[40692  1026]
+ [22349  1109]]
+
+Overall Confusion Matrix (Test Folds Only):
+[[203460   5133]
+ [111746   5549]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      NORMAL       0.65      0.98      0.78    208593
+ SIGNIFICANT       0.52      0.05      0.09    117295
+
+    accuracy                           0.64    325888
+   macro avg       0.58      0.51      0.43    325888
+weighted avg       0.60      0.64      0.53    325888
+
+
+Feature Importance:
+BROADER_CATEGORIZED_LIGHT_CONDITION_Unknown Lighting: 0.4852
+BROADER_CATEGORIZED_LIGHT_CONDITION_Poor Lighting: 0.3112
+BROADER_CATEGORIZED_ROAD_GEOMETRY_High Risk Geometry: 0.1435
+BROADER_CATEGORIZED_ROAD_SURFACE_Unknown Road Surface: 0.0495
+BROADER_CATEGORIZED_ROAD_GEOMETRY_Moderate Risk Geometry: 0.0070
+BROADER_CATEGORIZED_ROAD_SURFACE_Known Road Surface: 0.0035
+BROADER_CATEGORIZED_ROAD_GEOMETRY_Low Risk Geometry: 0.0001
+BROADER_CATEGORIZED_ROAD_GEOMETRY_Unknown Geometry: 0.0000
+BROADER_CATEGORIZED_LIGHT_CONDITION_Adequate Lighting: 0.0000
+
+Comparison with Version 1:
+Version 1 Mean Accuracy: 0.6413
+Version 2 Mean Accuracy: 0.6414
+Improvement: 0.01%

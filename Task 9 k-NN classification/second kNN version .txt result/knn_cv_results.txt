@@ -1,0 +1,99 @@
+5-Fold Cross-Validation Results (k=200) - Version 2 (Weighted)
+=======================================================
+
+Feature Weights (based on variance):
+Light Condition: 0.7131
+Road Geometry: 0.2492
+Road Surface: 0.0377
+
+Average Accuracy: 0.6302
+Standard Deviation of Accuracy: 0.0011
+
+Fold 1 Accuracy: 0.6296
+Classification Report:
+  NORMAL:
+    precision: 0.6491
+    recall: 0.9153
+    f1-score: 0.7596
+    support: 41666.0000
+  SIGNIFICANT:
+    precision: 0.4510
+    recall: 0.1233
+    f1-score: 0.1936
+    support: 23512.0000
+
+Confusion Matrix:
+[[38138  3528]
+ [20614  2898]]
+
+Fold 2 Accuracy: 0.6287
+Classification Report:
+  NORMAL:
+    precision: 0.6493
+    recall: 0.9120
+    f1-score: 0.7585
+    support: 41678.0000
+  SIGNIFICANT:
+    precision: 0.4472
+    recall: 0.1263
+    f1-score: 0.1969
+    support: 23500.0000
+
+Confusion Matrix:
+[[38010  3668]
+ [20533  2967]]
+
+Fold 3 Accuracy: 0.6314
+Classification Report:
+  NORMAL:
+    precision: 0.6509
+    recall: 0.9177
+    f1-score: 0.7616
+    support: 41819.0000
+  SIGNIFICANT:
+    precision: 0.4467
+    recall: 0.1189
+    f1-score: 0.1878
+    support: 23359.0000
+
+Confusion Matrix:
+[[38379  3440]
+ [20582  2777]]
+
+Fold 4 Accuracy: 0.6315
+Classification Report:
+  NORMAL:
+    precision: 0.6507
+    recall: 0.9170
+    f1-score: 0.7612
+    support: 41751.0000
+  SIGNIFICANT:
+    precision: 0.4532
+    recall: 0.1226
+    f1-score: 0.1930
+    support: 23426.0000
+
+Confusion Matrix:
+[[38284  3467]
+ [20553  2873]]
+
+Fold 5 Accuracy: 0.6297
+Classification Report:
+  NORMAL:
+    precision: 0.6494
+    recall: 0.9148
+    f1-score: 0.7596
+    support: 41679.0000
+  SIGNIFICANT:
+    precision: 0.4509
+    recall: 0.1241
+    f1-score: 0.1947
+    support: 23498.0000
+
+Confusion Matrix:
+[[38127  3552]
+ [20581  2917]]
+
+Average Confusion Matrix:
+[[38187  3531]
+ [20572  2886]]

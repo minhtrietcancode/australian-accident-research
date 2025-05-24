@@ -1,0 +1,84 @@
+===== Decision Tree Classification Results =====
+Dataset size: 325888
+Test set size (total across all folds): 325888
+
+Cross-validation Accuracy Scores:
+Fold 1: 0.6412
+Fold 2: 0.6412
+Fold 3: 0.6409
+Fold 4: 0.6414
+Fold 5: 0.6419
+
+Mean accuracy: 0.6413 (±0.0003)
+Overall accuracy on test folds: 0.6413
+
+Individual Fold Results:
+
+Fold 1:
+  Accuracy: 0.6412
+  Confusion Matrix:
+  [[40674  1045]
+ [22341  1118]]
+
+Fold 2:
+  Accuracy: 0.6412
+  Confusion Matrix:
+  [[40669  1050]
+ [22333  1126]]
+
+Fold 3:
+  Accuracy: 0.6409
+  Confusion Matrix:
+  [[40641  1078]
+ [22326  1133]]
+
+Fold 4:
+  Accuracy: 0.6414
+  Confusion Matrix:
+  [[40675  1043]
+ [22332  1127]]
+
+Fold 5:
+  Accuracy: 0.6419
+  Confusion Matrix:
+  [[40694  1024]
+ [22316  1143]]
+
+Average Confusion Matrix:
+[[40670  1048]
+ [22329  1129]]
+
+Overall Confusion Matrix (Test Folds Only):
+[[203353   5240]
+ [111648   5647]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      NORMAL       0.65      0.97      0.78    208593
+ SIGNIFICANT       0.52      0.05      0.09    117295
+
+    accuracy                           0.64    325888
+   macro avg       0.58      0.51      0.43    325888
+weighted avg       0.60      0.64      0.53    325888
+
+
+Feature Importance:
+CATEGORIZED_LIGHT_CONDITION_Unknown: 0.4150
+CATEGORIZED_LIGHT_CONDITION_Dark without Lighting: 0.2662
+ROAD_GEOMETRY_DESC_Not at intersection: 0.1241
+CATEGORIZED_LIGHT_CONDITION_Dark with Lighting: 0.0787
+CATEGORIZED_ROAD_SURFACE_Unknown: 0.0441
+ROAD_GEOMETRY_DESC_Cross intersection: 0.0220
+ROAD_GEOMETRY_DESC_T intersection: 0.0109
+CATEGORIZED_LIGHT_CONDITION_Limited Light: 0.0105
+CATEGORIZED_ROAD_SURFACE_Paved: 0.0077
+ROAD_GEOMETRY_DESC_Dead end: 0.0049
+ROAD_GEOMETRY_DESC_Multiple intersection: 0.0045
+ROAD_GEOMETRY_DESC_Unknown: 0.0037
+CATEGORIZED_ROAD_SURFACE_Gravel: 0.0036
+CATEGORIZED_ROAD_SURFACE_Unpaved: 0.0019
+ROAD_GEOMETRY_DESC_Y intersection: 0.0012
+ROAD_GEOMETRY_DESC_Private property: 0.0007
+ROAD_GEOMETRY_DESC_Road closure: 0.0005
+CATEGORIZED_LIGHT_CONDITION_Daylight: 0.0001
