@@ -15,10 +15,14 @@ from matplotlib.table import Table
 # Load the cluster data
 cluster0_df = pd.read_csv('Task 11 Clustering Analysis/task11_2_cluster_0.csv')
 cluster1_df = pd.read_csv('Task 11 Clustering Analysis/task11_2_cluster_1.csv')
+cluster2_df = pd.read_csv('Task 11 Clustering Analysis/task11_2_cluster_2.csv')
+cluster3_df = pd.read_csv('Task 11 Clustering Analysis/task11_2_cluster_3.csv')
 
 # Filter records with COUNT >= 10
 cluster0_df = cluster0_df[cluster0_df['COUNT'] >= 10]
 cluster1_df = cluster1_df[cluster1_df['COUNT'] >= 10]
+cluster2_df = cluster2_df[cluster2_df['COUNT'] >= 10]
+cluster3_df = cluster3_df[cluster3_df['COUNT'] >= 10]
 
 # Calculate statistics for each cluster
 stats_columns = ['SEVERE_ACCIDENT_RATE', 'LIGHT_RISK', 'GEOMETRY_RISK', 'SURFACE_RISK']
@@ -37,6 +41,20 @@ for col in stats_columns:
     cluster1_stats[f'MEAN_{col}'] = cluster1_df[col].mean()
     cluster1_stats[f'VAR_{col}'] = cluster1_df[col].var()
 cluster_stats.append(cluster1_stats)
+
+# Calculate stats for cluster 2
+cluster2_stats = {'CLUSTER': 2}
+for col in stats_columns:
+    cluster2_stats[f'MEAN_{col}'] = cluster2_df[col].mean()
+    cluster2_stats[f'VAR_{col}'] = cluster2_df[col].var()
+cluster_stats.append(cluster2_stats)
+
+# Calculate stats for cluster 3
+cluster3_stats = {'CLUSTER': 3}
+for col in stats_columns:
+    cluster3_stats[f'MEAN_{col}'] = cluster3_df[col].mean()
+    cluster3_stats[f'VAR_{col}'] = cluster3_df[col].var()
+cluster_stats.append(cluster3_stats)
 
 # Create a DataFrame for the stats
 stats_df = pd.DataFrame(cluster_stats)
@@ -171,4 +189,6 @@ def create_stats_table():
 # Create and save table visualizations
 create_cluster_table(cluster0_df, 0)
 create_cluster_table(cluster1_df, 1)
+create_cluster_table(cluster2_df, 2)
+create_cluster_table(cluster3_df, 3)
 create_stats_table() 

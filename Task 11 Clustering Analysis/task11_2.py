@@ -34,6 +34,8 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.cm as cm
 from task11_1 import task11_1
+from kneed import KneeLocator
+from matplotlib.gridspec import GridSpec
 
 # Call the function from task11_1.py to get the dataframe
 df = task11_1()
@@ -75,10 +77,10 @@ ax.set_xlabel('LIGHT_RISK')
 ax.set_ylabel('GEOMETRY_RISK')
 ax.set_zlabel('SURFACE_RISK')
 ax.set_title('3D Scatter Plot of Risk Factors')
-
 # Save the figure
 plt.tight_layout()
 plt.savefig('Task 11 Clustering Analysis/task11_2_overview_scatter_plot.png', dpi=300, bbox_inches='tight')
+
 plt.close()
 
 # Step 2: Determine optimal k for k-means clustering
@@ -98,20 +100,9 @@ plt.xlabel('Number of clusters (k)')
 plt.ylabel('Sum of Squared Errors (SSE)')
 plt.title('Elbow Method for Optimal k')
 
-# Find the elbow point (simple approach - find point of maximum curvature)
-# Calculate the rate of decrease
-differences = np.diff(sse)
-differences_of_differences = np.diff(differences)
-elbow_index = np.argmax(differences_of_differences) + 1
-optimal_k = k_range[elbow_index]
-
-# Add a vertical line at the optimal k
-plt.axvline(x=optimal_k, color='r', linestyle='--', label=f'Optimal k = {optimal_k}')
-plt.legend()
-plt.grid(True)
-plt.tight_layout()
-plt.savefig('Task 11 Clustering Analysis/task11_2_elbow_plot.png', dpi=300, bbox_inches='tight')
-plt.close()
+# Use KneeLocator to find the optimal elbow point
+knee_locator = KneeLocator(k_range, sse, curve="convex", direction="decreasing")
+optimal_k = knee_locator.elbow
 
 # Step 3: Perform k-means clustering with the optimal k
 kmeans = KMeans(n_clusters=optimal_k, random_state=42, n_init=10)
@@ -120,9 +111,22 @@ cluster_labels = kmeans.fit_predict(X_scaled)
 # Add cluster labels to the dataframe
 df['cluster'] = cluster_labels
 
-# Create a 3D scatter plot with colors representing cluster membership
-fig = plt.figure(figsize=(12, 10))
-ax = fig.add_subplot(111, projection='3d')
+# Create a combined figure with two subplots
+fig = plt.figure(figsize=(16, 8))
+gs = GridSpec(1, 2, width_ratios=[1, 2])  # Define grid layout
+
+# Subplot 1: Elbow plot
+ax1 = fig.add_subplot(gs[0])
+ax1.plot(k_range, sse, 'bo-')
+ax1.set_xlabel('Number of clusters (k)')
+ax1.set_ylabel('Sum of Squared Errors (SSE)')
+ax1.set_title('Elbow Method for Optimal k')
+ax1.axvline(x=optimal_k, color='r', linestyle='--', label=f'Optimal k = {optimal_k}')
+ax1.legend()
+ax1.grid(True)
+
+# Subplot 2: 3D scatter plot with clusters
+ax2 = fig.add_subplot(gs[1], projection='3d')
 
 # Create a colormap with distinct colors for each cluster
 colors = cm.tab10(np.linspace(0, 1, optimal_k))
@@ -130,7 +134,7 @@ colors = cm.tab10(np.linspace(0, 1, optimal_k))
 # Plot each cluster with a different color
 for i in range(optimal_k):
     cluster_points = df[df['cluster'] == i]
-    ax.scatter(
+    ax2.scatter(
         cluster_points['LIGHT_RISK'],
         cluster_points['GEOMETRY_RISK'],
         cluster_points['SURFACE_RISK'],
@@ -142,9 +146,8 @@ for i in range(optimal_k):
 
 # Plot cluster centers
 centers = kmeans.cluster_centers_
-# Inverse transform to get back to original scale
 centers_original = scaler.inverse_transform(centers)
-ax.scatter(
+ax2.scatter(
     centers_original[:, 0],
     centers_original[:, 1],
     centers_original[:, 2],
@@ -155,16 +158,19 @@ ax.scatter(
     alpha=1.0
 )
 
-# Set labels and title
-ax.set_xlabel('LIGHT_RISK')
-ax.set_ylabel('GEOMETRY_RISK')
-ax.set_zlabel('SURFACE_RISK')
-ax.set_title(f'K-Means Clustering with k={optimal_k}')
-plt.legend()
+# Set labels and title for the 3D scatter plot
+ax2.set_xlabel('LIGHT_RISK')
+ax2.set_ylabel('GEOMETRY_RISK')
+ax2.set_zlabel('SURFACE_RISK')
+ax2.set_title(f'K-Means Clustering with k={optimal_k}')
+ax2.legend()
 
-# Save the figure
+# Adjust layout and save the combined figure
 plt.tight_layout()
-plt.savefig('Task 11 Clustering Analysis/task11_2_clustered_scatter_plot.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 11 Clustering Analysis/task11_2_combined_plot.png', dpi=300, bbox_inches='tight')
+plt.close()
+
+print("Combined plot saved as 'task11_2_combined_plot.png'")
 
 # Output the top rows for each cluster
 for i in range(optimal_k):
@@ -180,6 +186,3 @@ for i in range(optimal_k):
     cluster_data.to_csv(f'Task 11 Clustering Analysis/task11_2_cluster_{i}.csv', index=False)
 
 print("CSV files saved successfully!")
-
-
-
