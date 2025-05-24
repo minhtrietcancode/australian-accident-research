@@ -25,7 +25,7 @@ def task5_1():
         DataFrame with metrics for all light condition and road geometry combinations.
     """
     # Load the data
-    accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
+    accident = pd.read_csv('Data Preprocess/updated_accident.csv')
 
     # Create combinations of light condition and road geometry
     # First, get unique values of each column

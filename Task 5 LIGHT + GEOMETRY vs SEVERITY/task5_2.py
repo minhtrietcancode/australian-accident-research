@@ -54,7 +54,7 @@ def task5_2():
 
     plt.title('Mean Severity by Light Condition and Road Geometry\n(Darker = More Severe)', fontsize=16)
     plt.tight_layout()
-    plt.savefig('task5_light_geometry_heatmap.png')
+    plt.savefig('Task 5 LIGHT + GEOMETRY vs SEVERITY/task5_light_geometry_heatmap.png')
     plt.close()
 
     # 2. Identify top 10 combinations with lowest mean SEVERITY and appropriate variance
@@ -68,7 +68,7 @@ def task5_2():
       # is why it can has mean severity = 0
 
     # Save to CSV
-    top10_severe.to_csv('task5_light_geometry_top10_severe.csv', index=False)
+    top10_severe.to_csv('Task 5 LIGHT + GEOMETRY vs SEVERITY/task5_light_geometry_top10_severe.csv', index=False)
 
     # Create bar chart visualization
     plt.figure(figsize=(14, 8))
@@ -107,7 +107,7 @@ def task5_2():
     plt.ylim(0, max(top10_severe['SEVERITY_MEAN']) * 1.5)  # Adjust y-axis to accommodate error bars
     plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('task5_light_geometry_top10_severe.png')
+    plt.savefig('Task 5 LIGHT + GEOMETRY vs SEVERITY/task5_light_geometry_top10_severe.png')
     plt.close()
 
     # 3. Identify top 10 combinations with highest percentage of serious/fatal accidents
@@ -117,7 +117,7 @@ def task5_2():
     top10_serious_prob = top10_serious_prob.head(10)
 
     # Save to CSV
-    top10_serious_prob.to_csv('task5_light_geometry_top10_serious_prob.csv', index=False)
+    top10_serious_prob.to_csv('Task 5 LIGHT + GEOMETRY vs SEVERITY/task5_light_geometry_top10_serious_prob.csv', index=False)
 
     # Create bar chart visualization
     plt.figure(figsize=(14, 8))
@@ -154,7 +154,7 @@ def task5_2():
     plt.ylim(0, max(top10_serious_prob['SERIOUS_FATAL_PERCENT']) * 1.2)  # Add some space for labels
     plt.grid(axis='y', alpha=0.3)
     plt.tight_layout()
-    plt.savefig('task5_light_geometry_top10_serious_prob.png')
+    plt.savefig('Task 5 LIGHT + GEOMETRY vs SEVERITY/task5_light_geometry_top10_serious_prob.png')
     plt.close()
 
     print("Task 5.2 completed: Analysis and visualizations have been saved.")

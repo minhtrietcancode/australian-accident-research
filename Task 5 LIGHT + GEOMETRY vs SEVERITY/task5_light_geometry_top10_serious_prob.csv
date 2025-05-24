@@ -1,0 +1,11 @@
+CATEGORIZED_LIGHT_CONDITION,ROAD_GEOMETRY_DESC,LIGHT_GEOMETRY,SEVERITY_MEAN,SEVERITY_VARIANCE,SERIOUS_FATAL_PERCENT
+Limited Light,Road closure,Limited Light_Road closure,2.0,0.0,100.0
+Dark without Lighting,Dead end,Dark without Lighting_Dead end,2.3076923076923075,0.23076923076923064,69.23076923076923
+Unknown,Dead end,Unknown_Dead end,2.2222222222222223,0.44444444444444436,66.66666666666666
+Dark without Lighting,Multiple intersection,Dark without Lighting_Multiple intersection,2.4285714285714284,0.30641821946169767,54.285714285714285
+Dark without Lighting,Not at intersection,Dark without Lighting_Not at intersection,2.425358378645576,0.3547047905947253,51.95254572417202
+Limited Light,Private property,Limited Light_Private property,2.5,0.5,50.0
+Dark without Lighting,T intersection,Dark without Lighting_T intersection,2.4861509073543457,0.3169686311248929,48.04202483285578
+Dark without Lighting,Cross intersection,Dark without Lighting_Cross intersection,2.5017482517482517,0.3239899330091977,46.15384615384615
+Dark without Lighting,Unknown,Dark without Lighting_Unknown,2.4545454545454546,0.47272727272727255,45.45454545454545
+Dark with Lighting,Not at intersection,Dark with Lighting_Not at intersection,2.535803497085762,0.29054080241927904,44.32972522897585
