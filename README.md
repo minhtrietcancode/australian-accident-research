@@ -2,7 +2,7 @@
 
 Note that this is developed as part of Assignment 2 for COMP20008 - Element of Data Processing at University of Melbourne Semester 1, 2025. The code is developed fully by myself, meanwhile the report is written by our group. 
 
-For detailed analysis, please refer to the [report](Victoria Road Crash Research.pdf). This README file will only provide a brief overview of the project, and which file is responsible for which part of the analysis.
+For detailed analysis, please refer to the [report](./Victoria%20Road%20Crash%20Research.pdf). This README file will only provide a brief overview of the project, and which file is responsible for which part of the analysis.
 
 ## Research Question
 **How do external factors influence accident severity?**
