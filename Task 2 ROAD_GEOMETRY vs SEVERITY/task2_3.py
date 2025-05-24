@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the dataset
-accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
+accident = pd.read_csv('Data Preprocess/updated_accident.csv')
 
 # Calculate mean and variance of severity for each road geometry category
 severity_stats = accident.groupby('ROAD_GEOMETRY_DESC')['SEVERITY'].agg(['mean', 'var']).reset_index()
@@ -26,7 +26,7 @@ severity_stats.columns = ['ROAD_GEOMETRY_CATEGORY', 'SEVERITY_MEAN', 'SEVERITY_V
 severity_stats = severity_stats.sort_values(by=['SEVERITY_MEAN', 'SEVERITY_VARIANCE'])
 
 # Save statistics to CSV
-severity_stats.to_csv('task2_3_stat.csv', index=False)
+severity_stats.to_csv('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_3_stat.csv', index=False)
 
 # Print stats to verify
 print("Severity Statistics by Road Geometry:")
@@ -66,7 +66,7 @@ add_labels(variance_bars)
 # Adjust layout and save figure
 plt.tight_layout()
 plt.grid(axis='y', linestyle='--', alpha=0.3)
-plt.savefig('task2_3_stat.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_3_stat.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 print("\nStatistics and visualization saved successfully!")

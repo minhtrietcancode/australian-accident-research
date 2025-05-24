@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Read the dataset
-accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
+accident = pd.read_csv('Data Preprocess/updated_accident.csv')
 
 # ===== 1. Pie Chart for Road Geometry Distribution =====
 plt.figure(figsize=(10, 6))
@@ -50,7 +50,7 @@ plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 # Add legend
 plt.legend(geometry_counts.index, title="Road Geometries", loc="center left", bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
-plt.savefig('task2_2_road_geometry_pie.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_2_road_geometry_pie.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # ===== 2. Stacked Bar Chart for Road Geometry by Severity =====
@@ -71,7 +71,7 @@ plt.legend(title='Road Geometry', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.xticks(rotation=0)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.savefig('task2_2_road_geometry_severity_stacked.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_2_road_geometry_severity_stacked.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # ===== 3. Pie Chart for Serious/Fatal Accidents by Road Geometry =====
@@ -94,7 +94,7 @@ plt.axis('equal')
 # Add legend
 plt.legend(serious_fatal_geometry.index, title="Road Geometries", loc="center left", bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
-plt.savefig('task2_2_road_geometry_severity_proportion.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_2_road_geometry_severity_proportion.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # Print some summary statistics to verify our analysis

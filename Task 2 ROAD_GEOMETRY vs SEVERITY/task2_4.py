@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the dataset
-accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
+accident = pd.read_csv('Data Preprocess/updated_accident.csv')
 
 
 # Define function to calculate percentage of serious/fatal accidents
@@ -47,7 +47,7 @@ def calculate_serious_accident_prob(df, group_col):
 road_geometry_serious_prob = calculate_serious_accident_prob(accident, 'ROAD_GEOMETRY_DESC')
 
 # Save to CSV
-road_geometry_serious_prob.to_csv('task2_4_road_geometry_serious_prob.csv', index=False)
+road_geometry_serious_prob.to_csv('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_4_road_geometry_serious_prob.csv', index=False)
 
 # Print data to verify
 print("Percentage of Serious/Fatal Accidents by Road Geometry:")
@@ -81,7 +81,7 @@ plt.grid(axis='y', linestyle='--', alpha=0.3)
 
 # Adjust layout and save
 plt.tight_layout()
-plt.savefig('task2_4_road_geometry_serious_prob.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 2 ROAD_GEOMETRY vs SEVERITY/task2_4_road_geometry_serious_prob.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 print("\nStatistics and visualization saved successfully!")
