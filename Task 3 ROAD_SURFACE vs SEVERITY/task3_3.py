@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the datasets
-accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
-vehicle = pd.read_csv('../Data Preprocess/updated_vehicle.csv')
+accident = pd.read_csv('Data Preprocess/updated_accident.csv')
+vehicle = pd.read_csv('Data Preprocess/updated_vehicle.csv')
 
 # Merge datasets on ACCIDENT_NO
 merged_data = pd.merge(accident, vehicle, on='ACCIDENT_NO')
@@ -29,7 +29,7 @@ severity_stats.columns = ['ROAD_SURFACE_CATEGORY', 'SEVERITY_MEAN', 'SEVERITY_VA
 severity_stats = severity_stats.sort_values(by=['SEVERITY_MEAN', 'SEVERITY_VARIANCE'])
 
 # Save statistics to CSV
-severity_stats.to_csv('task3_3_stat.csv', index=False)
+severity_stats.to_csv('Task 3 ROAD_SURFACE vs SEVERITY/task3_3_stat.csv', index=False)
 
 # Print stats to verify
 print("Severity Statistics by Road Surface:")
@@ -71,7 +71,7 @@ add_labels(variance_bars)
 # Adjust layout and save figure
 plt.tight_layout()
 plt.grid(axis='y', linestyle='--', alpha=0.3)
-plt.savefig('task3_3_stat.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 3 ROAD_SURFACE vs SEVERITY/task3_3_stat.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 print("\nStatistics and visualization saved successfully!")

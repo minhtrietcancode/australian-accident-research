@@ -32,8 +32,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Read the datasets
-accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
-vehicle = pd.read_csv('../Data Preprocess/updated_vehicle.csv')
+accident = pd.read_csv('Data Preprocess/updated_accident.csv')
+vehicle = pd.read_csv('Data Preprocess/updated_vehicle.csv')
 
 # Merge datasets on ACCIDENT_NO
 merged_data = pd.merge(accident, vehicle, on='ACCIDENT_NO')
@@ -54,7 +54,7 @@ plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 # Add legend
 plt.legend(road_surface_counts.index, title="Road Surfaces", loc="center left", bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
-plt.savefig('task3_2_road_surface_pie.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 3 ROAD_SURFACE vs SEVERITY/task3_2_road_surface_pie.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # ===== 2. Stacked Bar Chart for Road Surface by Severity =====
@@ -75,7 +75,7 @@ plt.legend(title='Road Surface', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.xticks(rotation=0)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.savefig('task3_2_road_surface_severity_stacked.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 3 ROAD_SURFACE vs SEVERITY/task3_2_road_surface_severity_stacked.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # ===== 3. Pie Chart for Serious/Fatal Accidents by Road Surface =====
@@ -98,7 +98,7 @@ plt.axis('equal')
 # Add legend
 plt.legend(serious_fatal_road.index, title="Road Surfaces", loc="center left", bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
-plt.savefig('task3_2_road_surface_severity_proportion.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 3 ROAD_SURFACE vs SEVERITY/task3_2_road_surface_severity_proportion.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # Print some summary statistics to verify our analysis

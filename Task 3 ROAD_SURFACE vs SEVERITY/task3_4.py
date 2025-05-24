@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the datasets
-accident = pd.read_csv('../Data Preprocess/updated_accident.csv')
-vehicle = pd.read_csv('../Data Preprocess/updated_vehicle.csv')
+accident = pd.read_csv('Data Preprocess/updated_accident.csv')
+vehicle = pd.read_csv('Data Preprocess/updated_vehicle.csv')
 
 # Merge datasets on ACCIDENT_NO
 merged_data = pd.merge(accident, vehicle, on='ACCIDENT_NO')
@@ -48,7 +48,7 @@ def calculate_serious_accident_prob(df, group_col):
 road_surface_serious_prob = calculate_serious_accident_prob(merged_data, 'CATEGORIZED_ROAD_SURFACE')
 
 # Save to CSV
-road_surface_serious_prob.to_csv('task3_4_road_surface_serious_prob.csv', index=False)
+road_surface_serious_prob.to_csv('Task 3 ROAD_SURFACE vs SEVERITY/task3_4_road_surface_serious_prob.csv', index=False)
 
 # Print data to verify
 print("Percentage of Serious/Fatal Accidents by Road Surface:")
@@ -82,7 +82,7 @@ plt.grid(axis='y', linestyle='--', alpha=0.3)
 
 # Adjust layout and save
 plt.tight_layout()
-plt.savefig('task3_4_road_surface_serious_prob.png', dpi=300, bbox_inches='tight')
+plt.savefig('Task 3 ROAD_SURFACE vs SEVERITY/task3_4_road_surface_serious_prob.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 print("\nStatistics and visualization saved successfully!")
